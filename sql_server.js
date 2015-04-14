@@ -52,7 +52,6 @@ app.get('/posts/new', function(req, res) {
 //create a post
 app.post('/blog', function(req, res) {
 	// save the new post to the db
-	console.log(req.body);
 	if (!req.body.imgurl || req.body.imgurl===undefined || req.body.imgurl==='') {
 		req.body.imgurl = null;
 	}
