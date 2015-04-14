@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Add a New Post</title>
+</head>
+<body>
+	<h1>Add an Awesome Post!</h1>
+	<form action="/blog" method="POST">
+		<input type="text" cols="50" name="title" placeholder="Post's title goes here" required><br><br>
+		<textarea rows="10" cols="50" name="body" placeholder="Post's body goes here" wrap="virtual" required></textarea><br><br>
+		<input type="text" cols="50" name="imgurl" placeholder="image url (optional)"><br><br>
+		<button>Create Post</button>
+	</form><br><br>
+	<small><a href="/blog" method="GET">Cancel creation, take me back home.</a></small>
+</body>
+</html>

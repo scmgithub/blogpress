@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> Edit <%= thisPost.title %> </title>
+</head>
+<body>
+	<!-- update form -->
+	<h3>Update "<%= thisPost.title %>" here:</h3>
+	<form method="POST" action="/post/<%= thisPost.id %>?_method=PUT">
+		Title:&nbsp;<input type="text" name="title" value="<%= thisPost.title %>" required><br><br>
+		Body:<br><textarea rows="10" cols="50" name="body" placeholder="" wrap="virtual" required><%= thisPost.body %></textarea><br><br>
+		<% if (thisPost.imgurl && thisPost.imgurl !== '' && thisPost.imgurl !== null) { %>
+			Optionally, edit or remove the image url:<br>
+			<img src="<%= thisPost.imgurl%>">
+			<br><input type="text" name="imgurl" value="<%= thisPost.imgurl %>"><br><br>
+		<% } else { %>
+			Optionally, add an image url:<br>
+			<input type = "text" name="imgurl" placeholder="image url goes here"><br><br>
+		<% } %>
+		<button>Update Post</button>
+	</form><br><br>
+	<small><a href="/post/<%= thisPost.id%>" method="GET">Or, Cancel this update and go back.</a><br>
+	<a href="/blog" method="GET">Or go back Home.</a></small>
+</body>
+</html>

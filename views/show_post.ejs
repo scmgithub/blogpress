@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> <%= thisPost.title %> </title>
+</head>
+<body>
+	<h2><%= thisPost.title %></h2>
+
+	<% if (thisPost.imgurl && thisPost.imgurl !== '' && thisPost.imgurl !== null) { %>
+		<img src="<%= thisPost.imgurl%>">
+	<% } %>
+	<p><%= thisPost.body %></p>
+	<a href="/blog">Go home here.</a><br><br>
+	<a href="/post/<%= thisPost.id %>/edit">Update this post here</a><br><br>
+	<form method="POST" action="/post/<%= thisPost.id %>?_method=DELETE">
+		<button>Delete this post</button>
+	</form>
+</body>
+</html>
